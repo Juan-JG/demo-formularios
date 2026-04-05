@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talleres UAH · Inscripción</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div id="form-app"></div>
+
+  <script type="module">
+    import { initForm } from '../shared/form-engine.js';
+
+    // ─── CONFIGURACIÓN — edita aquí para cada formulario nuevo ───────────────
+    const config = {
+      titulo:    "Talleres de extensión UAH",
+      subtitulo: "Inscríbete en nuestros talleres de extensión universitaria. Actividades abiertas a la comunidad durante todo el semestre.",
+      tag:       "Talleres",
+
+      hubspot: {
+        portalId: "TU_PORTAL_ID",          // ← reemplazar
+        formGuid: "GUID_FORM_TALLERES"     // ← reemplazar
+      },
+
+      sheets: {
+        webhookUrl: "URL_APPS_SCRIPT_TALLERES"   // ← reemplazar
+      },
+
+      interes: "Taller UAH",   // valor que se acumula en el multi-select de HubSpot
+
+      campos: [
+        { id: "firstname", label: "Nombre",            tipo: "text",  requerido: true,  placeholder: "Tu nombre" },
+        { id: "lastname",  label: "Apellido",           tipo: "text",  requerido: true,  placeholder: "Tu apellido" },
+        { id: "email",     label: "Correo electrónico", tipo: "email", requerido: true,  placeholder: "correo@ejemplo.cl" },
+        { id: "phone",     label: "Teléfono",           tipo: "tel",   requerido: false, placeholder: "+56 9 XXXX XXXX" },
+        { id: "rut",       label: "RUT",                tipo: "rut",   requerido: true,  placeholder: "12.345.678-9" },
+        {
+          id: "taller_interes",
+          label: "Taller de interés",
+          tipo: "select",
+          requerido: true,
+          opciones: [
+            "Taller de Pintura",
+            "Taller de Fotografía",
+            "Taller de Teatro",
+            "Taller de Escritura Creativa",
+            "Taller de Música"
+          ]
+        }
+      ]
+    };
+    // ─────────────────────────────────────────────────────────────────────────
+
+    initForm(config);
+  </script>
+</body>
+</html>
