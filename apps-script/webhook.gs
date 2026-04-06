@@ -15,8 +15,8 @@
  */
 
 // ID del Google Sheet (lo encuentras en la URL del Sheet:
-// https://docs.google.com/spreadsheets/d/ESTE_ES_EL_ID/edit)
-const SHEET_ID = 'REEMPLAZAR_CON_ID_DEL_SHEET';
+// https://docs.google.com/spreadsheets/d/1M5xFMgVhTnuYfSsIV5a83hEORRQspU_HgXFdOblZVCY/edit)
+const SHEET_ID = '1M5xFMgVhTnuYfSsIV5a83hEORRQspU_HgXFdOblZVCY';
 
 // Nombre de la pestaña (hoja) donde se agregarán las filas
 const SHEET_NAME = 'Respuestas';
