@@ -1,68 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admisión UAH · Solicitud de información</title>
-  <link rel="stylesheet" href="../shared/styles.css">
-</head>
-<body>
-  <div id="form-app"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admisión UAH · Solicitud de información</title>
+    <link rel="stylesheet" href="../shared/styles.css" />
+  </head>
+  <body>
+    <div id="form-app"></div>
 
-  <script type="module">
-    import { initForm } from '../shared/form-engine.js';
+    <script type="module">
+      import { initForm } from "../shared/form-engine.js";
 
-    // ─── CONFIGURACIÓN — edita aquí para cada formulario nuevo ───────────────
-    const config = {
-      titulo:    "Admisión UAH 2025",
-      subtitulo: "Solicita información sobre nuestras carreras de pregrado. Un ejecutivo de admisión se pondrá en contacto contigo.",
-      tag:       "Admisión",
+      // ─── CONFIGURACIÓN — edita aquí para cada formulario nuevo ───────────────
+      const config = {
+        titulo: "Admisión UAH 2025",
+        subtitulo:
+          "Solicita información sobre nuestras carreras de pregrado. Un ejecutivo de admisión se pondrá en contacto contigo.",
+        tag: "Admisión",
 
-      hubspot: {
-        portalId: "TU_PORTAL_ID",          // ← reemplazar
-        formGuid: "GUID_FORM_ADMISION"     // ← reemplazar
-      },
-
-      sheets: {
-        webhookUrl: "URL_APPS_SCRIPT_ADMISION"   // ← reemplazar
-      },
-
-      interes: "Admisión Pregrado",  // valor que se acumula en el multi-select de HubSpot
-
-      campos: [
-        { id: "firstname", label: "Nombre",            tipo: "text",  requerido: true,  placeholder: "Tu nombre" },
-        { id: "lastname",  label: "Apellido",           tipo: "text",  requerido: true,  placeholder: "Tu apellido" },
-        { id: "email",     label: "Correo electrónico", tipo: "email", requerido: true,  placeholder: "correo@ejemplo.cl" },
-        { id: "phone",     label: "Teléfono",           tipo: "tel",   requerido: false, placeholder: "+56 9 XXXX XXXX" },
-        { id: "rut",       label: "RUT",                tipo: "rut",   requerido: true,  placeholder: "12.345.678-9" },
-        {
-          id: "carrera_interes",
-          label: "Carrera de interés",
-          tipo: "select",
-          requerido: true,
-          opciones: [
-            "Derecho",
-            "Psicología",
-            "Trabajo Social",
-            "Ingeniería Comercial",
-            "Pedagogía en Historia",
-            "Filosofía",
-            "Periodismo",
-            "Otra"
-          ]
+        hubspot: {
+          portalId: "51242713", // ← reemplazar
+          formGuid: "239ef8a1-a8dd-4ac1-a04a-252f2f53149f", // ← reemplazar
         },
-        {
-          id: "anio_egreso",
-          label: "Año de egreso enseñanza media",
-          tipo: "select",
-          requerido: true,
-          opciones: ["2025", "2024", "2023", "2022 o antes"]
-        }
-      ]
-    };
-    // ─────────────────────────────────────────────────────────────────────────
 
-    initForm(config);
-  </script>
-</body>
+        sheets: {
+          webhookUrl: "URL_APPS_SCRIPT_ADMISION", // ← reemplazar
+        },
+
+        interes: "Admisión Pregrado", // valor que se acumula en el multi-select de HubSpot
+
+        campos: [
+          {
+            id: "firstname",
+            label: "Nombre",
+            tipo: "text",
+            requerido: true,
+            placeholder: "Tu nombre",
+          },
+          {
+            id: "lastname",
+            label: "Apellido",
+            tipo: "text",
+            requerido: true,
+            placeholder: "Tu apellido",
+          },
+          {
+            id: "email",
+            label: "Correo electrónico",
+            tipo: "email",
+            requerido: true,
+            placeholder: "correo@ejemplo.cl",
+          },
+          {
+            id: "phone",
+            label: "Teléfono",
+            tipo: "tel",
+            requerido: false,
+            placeholder: "+56 9 XXXX XXXX",
+          },
+          {
+            id: "rut",
+            label: "RUT",
+            tipo: "rut",
+            requerido: true,
+            placeholder: "12.345.678-9",
+          },
+          {
+            id: "carrera_interes",
+            label: "Carrera de interés",
+            tipo: "select",
+            requerido: true,
+            opciones: [
+              "Derecho",
+              "Psicología",
+              "Trabajo Social",
+              "Ingeniería Comercial",
+              "Pedagogía en Historia",
+              "Filosofía",
+              "Periodismo",
+              "Otra",
+            ],
+          },
+          {
+            id: "anio_egreso",
+            label: "Año de egreso enseñanza media",
+            tipo: "select",
+            requerido: true,
+            opciones: ["2025", "2024", "2023", "2022 o antes"],
+          },
+        ],
+      };
+      // ─────────────────────────────────────────────────────────────────────────
+
+      initForm(config);
+    </script>
+  </body>
 </html>
